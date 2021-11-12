@@ -16,11 +16,12 @@ dotnet run
 
 ```bash
 # dotnet publish -c Release -o <out_dir>
-dotnet publish -c Release -o app
+dotnet publish --configuration Release
 ```
 
 ## 构建镜像
 
 ```bash
-docker 
+docker build --pull --rm -f "Dockerfile" -t <name=grpc.testing>:<version=latest> <workspace=".">
+# example: docker build --pull --rm -f "Dockerfile" -t grpc.testing:latest "."
 ```
