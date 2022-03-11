@@ -33,6 +33,8 @@ public class GreeterService : Protos.Greeter.GreeterBase
     {
         var page = await browser.NewPageAsync();
         await page.GotoAsync(request.Url);
+        await page.WaitForLoadStateAsync(LoadState.Load);
+        await page.WaitForTimeoutAsync(2000);
         await page.EmulateMediaAsync(new PageEmulateMediaOptions { Media = Media.Screen });
         var pdf = await page.PdfAsync(new PagePdfOptions
         {
