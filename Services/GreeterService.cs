@@ -42,7 +42,6 @@ public class GreeterService : Protos.Greeter.GreeterBase
                 Top = "80",
                 Bottom = "80"
             },
-            Path = "page.pdf"
         });
         return new Protos.PDFResponse
         {
