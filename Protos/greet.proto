@@ -7,6 +7,7 @@ option csharp_namespace = "Widge.DotNet.Grpc.Testing.Protos";
 service Greeter {
   // Sends a greeting
   rpc SayHello(HelloRequest) returns (HelloReply);
+  rpc GeneratePDF(PDFRequest) returns (PDFResponse);
 }
 
 // The request message containing the user's name.
@@ -17,4 +18,11 @@ message HelloRequest {
 // The response message containing the greetings.
 message HelloReply {
   string message = 1;
+}
+
+message PDFRequest {
+  string url = 1;
+}
+message PDFResponse {
+  bytes pdf = 1;
 }
